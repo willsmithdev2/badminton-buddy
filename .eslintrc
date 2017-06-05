@@ -1,0 +1,24 @@
+{
+    'env': {
+        'amd' : true,
+        'browser' : true,
+        'es6': true
+    },
+    'parser' : 'babel-eslint',
+    'extends': 'eslint:recommended',
+    'rules': {
+        'semi' : ['error', 'always'],
+        'sort-imports': ['error'],
+        'comma-spacing' : ['error'],
+        'arrow-spacing' : ['error'],
+        'arrow-parens' : ['error', 'always'],
+        'no-multiple-empty-lines' : ['error'],
+        'quotes' : ['error', 'single'],
+        'indent' : ['error', 4, {'SwitchCase' : 1}],
+        'no-var': ['error'],
+        'no-extra-parens' : ['error'],
+        'keyword-spacing' : ['error'],
+        'no-console': 'off'
+    }
+
+}

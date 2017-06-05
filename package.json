@@ -1,0 +1,55 @@
+{
+  "name": "lumber-buddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch-backend": "babel src --watch --out-dir backend --sourcemaps",
+    "babel-backend": "babel src --out-dir backend",
+    "server": "nodemon backend/server.js",
+    "debug-server": "node-debug --debug-port=3000 backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willsmithdev2/lumber-buddy.git"
+  },
+  "author": "Will Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willsmithdev2/lumber-buddy/issues"
+  },
+  "homepage": "https://github.com/willsmithdev2/lumber-buddy#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-eslint": "^7.2.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "d3": "^4.9.1",
+    "d3-selection": "^1.1.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "factor-bundle": "^2.5.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^19.0.0",
+    "grunt-exec": "^2.0.0",
+    "jquery": "^3.2.1",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bootstrap-social": "^5.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "font-awesome": "^4.7.0",
+    "google-auth-library": "^0.10.0",
+    "method-override": "^2.3.8",
+    "q": "^1.5.0"
+  }
+}
