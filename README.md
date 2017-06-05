@@ -1,16 +1,6 @@
 ## Synopsis
 
-Basic frontend web app template. Uses:
-
-- grunt
-- ES6
-- babel
-- eslint (includes some basic rules that I like)
-- express server
-- etc
-
-Also demos use of multiple entry points using browserify and factor bundle.
-Has some basic authentication use Google Auth2. 
+A web app to organise badminton club nights. (WIP) 
 
 ## Installation
 
