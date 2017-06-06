@@ -1,9 +1,11 @@
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import express from 'express';
+import favicon from 'serve-favicon';
 import routes from './routes';
-const app = express();
 
+const app = express();
+app.use(favicon('dist/images/favicon.ico'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
