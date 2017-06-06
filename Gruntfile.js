@@ -1,6 +1,32 @@
 module.exports = function(grunt) {
 
   // Project configuration.
+  var browserifyCommonConfig = {
+      src: [
+          "./public/js/auth.js",
+          "./public/js/home.js",
+      ],
+      dest: './dist/js/common.js',
+      options: {
+              browserifyOptions: { debug: true },
+              transform: [["babelify", { "presets": ["es2015"] }]]
+      ,
+      plugin: [
+             [
+               "factor-bundle", { outputs: [
+                 "./dist/js/auth.js",
+                 "./dist/js/home.js"
+             ]
+         }]
+     ]
+   }
+ };
+
+ var browserifyWatchConfig = browserifyCommonConfig;
+ browserifyWatchConfig.options.watch = true;
+ browserifyWatchConfig.options.keepAlive = true;
+
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: {
@@ -14,48 +40,8 @@ module.exports = function(grunt) {
       'babel-backend': 'npm run babel-backend'
     },
     browserify: {
-       compile: {
-           src: [
-               "./public/js/auth.js",
-               "./public/js/home.js",
-           ],
-           dest: './dist/js/lumber-buddy.js',
-           options: {
-                   browserifyOptions: { debug: true },
-                   transform: [["babelify", { "presets": ["es2015"] }]]
-           ,
-           plugin: [
-                  [
-                    "factor-bundle", { outputs: [
-                      "./dist/js/auth.js",
-                      "./dist/js/home.js"
-                  ]
-              }]
-          ]
-        }
-      },
-      watch: {
-          src: [
-              "./public/js/auth.js",
-              "./public/js/home.js",
-          ],
-          dest: './dist/js/lumber-buddy.js',
-          options: {
-                  browserifyOptions: { debug: true },
-                  transform: [["babelify", { "presets": ["es2015"] }]]
-          ,
-          plugin: [
-                 [
-                   "factor-bundle", { outputs: [
-                     "./dist/js/auth.js",
-                     "./dist/js/home.js"
-                 ]
-             }]
-          ],
-          watch: true,
-          keepAlive: true
-       }
-      }
+      compile: browserifyCommonConfig,
+      watch: browserifyWatchConfig
     },
     watch: {
         html: {
