@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
   // Project configuration.
+
   var browserifyCommonConfig = {
       src: [
           "./public/js/auth.js",
@@ -9,15 +10,17 @@ module.exports = function(grunt) {
       dest: './dist/js/common.js',
       options: {
               browserifyOptions: { debug: true },
-              transform: [["babelify", { "presets": ["es2015"] }]]
+              transform: [["babelify", { "presets": ["es2015"] }]],
+              paths: f
       ,
       plugin: [
-             [
-               "factor-bundle", { outputs: [
-                 "./dist/js/auth.js",
-                 "./dist/js/home.js"
-             ]
-         }]
+          [
+              "factor-bundle", { outputs: [
+                      "./dist/js/auth.js",
+                      "./dist/js/home.js"
+                  ]
+              }
+          ]
      ]
    }
  };

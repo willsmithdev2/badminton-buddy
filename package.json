@@ -9,6 +9,11 @@
     "server": "nodemon backend/server.js",
     "debug-server": "node-debug --debug-port=3000 backend/server.js"
   },
+  "browserify": {
+    "transform": [
+      "svgify"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/willsmithdev2/lumber-buddy.git"
@@ -20,6 +25,7 @@
   },
   "homepage": "https://github.com/willsmithdev2/lumber-buddy#readme",
   "devDependencies": {
+    "@zambezi/d3-utils": "^3.5.1",
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.1",
     "babel-polyfill": "^6.23.0",
@@ -35,13 +41,17 @@
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-requirejs": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^19.0.0",
     "grunt-exec": "^2.0.0",
     "jquery": "^3.2.1",
     "nodemon": "^1.11.0",
-    "serve-favicon": "^2.4.3"
+    "serve-favicon": "^2.4.3",
+    "svg-browserify": "0.0.2",
+    "svgify": "0.0.0",
+    "text": "github:requirejs/text"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
