@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
   // Project configuration.
+  var html = require('html-browserify');
 
   var browserifyCommonConfig = {
       src: [
@@ -10,8 +11,7 @@ module.exports = function(grunt) {
       dest: './dist/js/common.js',
       options: {
               browserifyOptions: { debug: true },
-              transform: [["babelify", { "presets": ["es2015"] }]],
-              paths: f
+              transform: [html, ["babelify", { "presets": ["es2015"] }]]
       ,
       plugin: [
           [

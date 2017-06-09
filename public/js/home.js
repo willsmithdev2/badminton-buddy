@@ -1,7 +1,14 @@
 
 import * as d3 from 'd3-selection';
-import court from './components/court';
-const foo = () => {
-    court(d3.select('.container-fluid').append('div').classed('tester', true)); //Example of D3 selections};
+import Court from './components/court';
+const setUpCourts = () => {
+
+    const courtSVG = d3.select('.courts-container')
+                      .append('div')
+                      .classed('court', true);
+    const court1 = new Court();
+    court1.setScale(300, 300);
+    court1.render(courtSVG);
+
 }
-foo();
+setUpCourts();
