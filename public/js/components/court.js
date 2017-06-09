@@ -10,10 +10,11 @@ export default class Court {
     }
 
     render(node) {
-
-      const svgNode = node.append('svg')
-        .attr('viewBox', '9.2 30 83 40')
-        .html(courtHtml);
+        node.append('div')
+          .classed('court', true)
+          .append('svg')
+          .attr('viewBox', '9.2 30 83 40')
+          .html(courtHtml);
     }
 
     setScale (width, height) {
